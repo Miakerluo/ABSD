@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LogowanieNaTab</title>
+    <style>
+    div{
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    }
+    form{
+        width: 30%;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid black;
+    }
+    p{
+        font-size: 1.5vw;
+    }
+    input{
+        margin: 10px;
+        font-size: 1.5vw;
+    }
+    #pass{
+        text-align: center;
+        color: green;
+    }
+    #error{
+        text-align: center;
+        color: red;
+    }
+    </style>    
+</head>
+<body>
+    <div>
+        <form method="POST" action="login.php">
+            <p>Wprowadź nazwę użytkownika i hasło:</p>
+            <input name="loginINP" type="text" placeholder="Login:" required></input>
+            <input name="passINP" type="password" placeholder="Hasło:" required></input>
+			<br>
+            <input name="submitForm" type="submit"></input>
+        </form>
+	</div>
+    <?php
+        $loginArray = array("user1", "user2", "user3");
+        $passArray = array("pass1", "pass2", "pass3");
+        $loginFound = 0;
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $login = $_POST['loginINP'];
+            $password = $_POST['passINP'];
+            for($i=0; $i<count($loginArray); $i++){
+                if($login === $loginArray[$i] && $password === $passArray[$i]){
+                    echo "<p id='pass'>Jesteś zalogowany jako: ".$login." , ".$password."</p>";
+                    $loginFound = 1;
+                }
+            }
+            if(!$loginFound){
+                echo "<p id='error'>Hasło lub login są niepoprawne: ".$login." , ".$password."</p>";
+            }
+        }
+    ?>
+</body>
+</html>

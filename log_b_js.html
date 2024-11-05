@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="styl.css"/>
+</head>
+<body>
+<div>
+	<form name="form1">
+		<p>Logowanie JavaScript</p>
+		<p>Wprowadź nazwę użytkownika i hasło:</p>
+		<input type="text" id="username" placeholder="login" name="user" required><br>
+		<input type="password" placeholder="hasło" id="pwd" name="pass" required><br>
+		<input type="button" value="Prześlij" onclick="check()">
+		<p id="loged"></p>
+		<a style="color: black;" href="index.php">powrót</a>
+	</form>
+<script language= "JavaScript" type= "text/javascript">
+	const users = ["user1", "user2", "user3"];
+	const passwords = ["pass1", "pass2", "pass3"];
+	//var users = new Array("user1", "user2", "user3");
+	//var passwords = new Array("pass1", "pass2", "pass3");
+	function sprawdz(user, pass)
+	{  
+			for(let i = 0; i < users.length; i++){
+			if((user == users[i]) && (pass == passwords[i]))
+			return true;
+		}
+			return false;
+	}
+	function check()
+	{
+			let user = document.form1.user.value;
+			let pass = document.form1.pass.value;
+		if(!sprawdz(user, pass))
+		{
+			alert('Niepoprawny login lub hasło!');
+		}
+		else
+		{
+			document.getElementById("loged").innerHTML = "jesteś zalogowany jako: " + user;
+		}
+	}
+</script>
+</div>
+</body>
+</html>

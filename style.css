@@ -1,0 +1,81 @@
+body
+{
+	background-color: gray;
+	font-family: arial, helvetica;
+}
+a:link {
+  color: white;
+  text-decoration: none;
+}
+a:visited{
+  color: red;	
+}
+a:hover{
+  color: white;
+}
+h1
+{
+  text-align: center;
+  padding: 20px;
+  color: white;
+  text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+}
+
+h2
+{
+	text-align: center;
+}
+.log
+{
+	width: 280px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 15%;
+	background-color: white;
+	padding-bottom: 20px;
+	-webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+	-moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+	box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+	background-color: rgba(255, 255, 255, 1);
+	background-image: linear-gradient(360deg, rgba(89, 131, 252, 0.15) 0%, rgba(80, 82, 89, 1) 100%),  url(back.jpeg);
+	background-size: cover;
+	background-position: left top;
+	background-repeat: repeat;
+}
+.mid
+{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+form
+ {       
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+}
+input
+{
+	background-color: lightgray;
+	margin: 10px;
+	padding: 2px;
+}
+button
+{
+	width: 158px;
+	cursor: pointer;
+	background-color: darkgray;
+	color: white;
+	margin-top: 10px;
+	border-radius: 10px;
+	display: block;
+	margin: auto;
+}
+button:hover
+{
+	background-color: black;
+} 
